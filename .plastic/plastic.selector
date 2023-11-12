@@ -1,0 +1,4 @@
+repository "a45837_TarefasAI@OppaiDuraggon@cloud"
+  path "/"
+    br "/main"
+    co "/main"
