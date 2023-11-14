@@ -157,10 +157,11 @@ MonoBehaviour:
   allFish:
   - {fileID: 1733855665772604, guid: b0489fdb6d64a4a4ba8e194e561d60cd, type: 3}
   swimLimits: {x: 5, y: 5, z: 5}
-  minSpeed: 1.52
-  maxSpeed: 3.08
-  neighbourDistance: 9.93
-  rotationSpeed: 1.68
+  goalPos: {x: 0, y: 0, z: 0}
+  minSpeed: 0.29
+  maxSpeed: 1.12
+  neighbourDistance: 10
+  rotationSpeed: 2.61
 --- !u!4 &78223582
 Transform:
   m_ObjectHideFlags: 0
