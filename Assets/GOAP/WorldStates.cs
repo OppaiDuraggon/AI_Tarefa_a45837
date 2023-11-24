@@ -1,56 +1,74 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 [System.Serializable]
-public class WorldStates
+public class WorldState 
 {
+
     public string key;
     public int value;
 }
 
 public class WorldStates 
 {
+
     public Dictionary<string, int> states;
 
-    public WorldStates()
+    public WorldStates() 
     {
-        states = new Dictionary<string, int>()
+        states = new Dictionary<string, int>();
     }
-    public bool HasState(string key)
+
+    public bool HasState(string key) 
     {
         return states.ContainsKey(key);
     }
-    void AddState(string key, int value)
+
+    private void AddState(string key, int value) 
     {
         states.Add(key, value);
     }
-    public void ModifyState(stringkey, int value)
+
+    public void ModifyState(string key, int value) 
     {
-        if(states.ContainsKey(key))
+
+        if (HasState(key)) 
         {
+
             states[key] += value;
-            if (states[key] <= 0)
+            if (states[key] <= 0) 
+            {
                 RemoveState(key);
+            }
+        } 
+        else 
+        {
+            AddState(key, value);
         }
-        else
-            states.Add(key, value);
     }
-    public void RemoveState(string key)
+
+    private void RemoveState(string key) 
     {
-        if (states.ContainsKey(key))
+        if (HasState(key)) {
+
             states.Remove(key);
+        }
     }
-    public void SetState(string key, int value)
+
+
+    public void SetState(string key, int value) 
     {
-        if (states.ContainsKey(key))
+        if (HasState(key)) {
+
             states[key] = value;
-        else
-        states.Add.(key, value);
+        } 
+        else 
+        {
+            AddState(key, value);
+        }
     }
-    public Dictionary<string, int> GetStates()
+
+    public Dictionary<string, int> GetStates() 
     {
         return states;
     }
-       
 }
