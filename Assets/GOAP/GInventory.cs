@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GInventory 
+public class GInventory
 {
     List<GameObject> items = new List<GameObject>();
 
     public void AddItem(GameObject i)
     {
-        items.Add;
+        items.Add(i);
     }
 
     public GameObject FindItemWithTag(string tag)
@@ -28,8 +28,8 @@ public class GInventory
         int indexToRemove = -1;
         foreach (GameObject g in items)
         {
-           indexToRemove++;
-           if (g == i)
+            indexToRemove++;
+            if (g == i)
                 break;
 
         }

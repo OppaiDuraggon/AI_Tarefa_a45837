@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpdateWorld : MonoBehaviour 
+public class UpdateWorld : MonoBehaviour
 {
     public Text states;
 
-    private void LateUpdate() 
+    private void LateUpdate()
     {
-        Dictionary<string, int> worldStates = GWorld.Instance.GetWorld().GetStates();
+        Dictionary<string, int> worldStates = Gworld.Instance.GetWorld().GetStates();
         states.text = "";
 
-        foreach (KeyValuePair<string, int> s in worldStates) 
+        foreach (KeyValuePair<string, int> s in worldStates)
         {
             states.text += s.Key + ", " + s.Value + "\n";
         }

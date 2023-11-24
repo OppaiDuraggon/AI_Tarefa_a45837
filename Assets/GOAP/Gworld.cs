@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public sealed class Gworld
 {
     private static readonly Gworld instance = new Gworld();
@@ -15,11 +16,11 @@ public sealed class Gworld
         patients = new Queue<GameObject>();
         cubicles = new Queue<GameObject>();
 
-        GameObject[] cubes = GAction.FindGameObjectsWithTag("Cubicle");
+        GameObject[] cubes = GameObject.FindGameObjectsWithTag("Cubicle");
         foreach (GameObject c in cubes)
             cubicles.Enqueue(c);
 
-        if(cubes.Length < 0)
+        if (cubes.Length < 0)
             world.ModifyState("FreeCCubicle", cubes.Length);
     }
     private Gworld()
@@ -33,20 +34,20 @@ public sealed class Gworld
 
     public GameObject RemovePatient()
     {
-        if(patients.Count == 0) return null;
+        if (patients.Count == 0) return null;
         return patients.Dequeue();
-    }  
+    }
 
-        public void AddCubicle(GameObject p)
+    public void AddCubicle(GameObject p)
     {
         cubicles.Enqueue(p);
     }
 
     public GameObject RemoveCubicle()
     {
-        if(cubicles.Count == 0) return null;
+        if (cubicles.Count == 0) return null;
         return cubicles.Dequeue();
-    } 
+    }
 
     public static Gworld Instance
     {

@@ -9,10 +9,10 @@ public class GoToWaitingRoom : GAction
         return true;
     }
 
-        public override bool PostPerform()
+    public override bool PostPerform()
     {
-        GWorld.Instance.GetWorld().ModifyState("Waiting", 1);
-        GWorld.Instance.AddPatient(this.gameObject);
+        Gworld.Instance.GetWorld().ModifyState("Waiting", 1);
+        Gworld.Instance.AddPatient(this.gameObject);
         beliefs.ModifyState("atHospital", 1);
         return true;
     }
